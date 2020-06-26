@@ -45,22 +45,22 @@ while True:
     result = json.loads(result)
 
     if (len(result)) > 2 and (len(result)) < 4 :
-        #ochistit ekran i vivesti
+         
 
         os.system('clear')
 
-        if result[2][2] < 0 :#objem nize nulja zna4it prodaza
+        if result[2][2] < 0 :
             totalsell = totalsell+result[2][2]
             if maxsell > result[2][2] :
                 maxsell = result[2][2]
 
-        if result[2][2] > 0 :#objem vishe nulja zna4it pokupka
+        if result[2][2] > 0 :
             totalbuy = totalbuy+result[2][2]
             if maxbuy < result[2][2] :
                 maxbuy = result[2][2]
         if result[2][2]>=10 or result[2][2] <=-10 :
-            bot.send_message(chat_id='-1001155535431', text='deal volume : '+str(result[2][2])+' price : '+str(result[2][3]))
-            bot.send_message(chat_id='-1001155535431', text='totalbuy : '+str(totalbuy)+' totalsell : '+str(totalsell))
+            bot.send_message(chat_id='your channel id', text='deal volume : '+str(result[2][2])+' price : '+str(result[2][3]))
+            bot.send_message(chat_id='your channel id', text='totalbuy : '+str(totalbuy)+' totalsell : '+str(totalsell))
 
         print('totalbuy : ',totalbuy,'totalsell : ',totalsell)
         print('maxbuy : ',maxbuy,'maxsell : ',maxsell)
